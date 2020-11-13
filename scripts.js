@@ -57,10 +57,33 @@ function findLowestScore(array) {
   return min_value;
 }
 
-addSubmission(submissions, "James", 12, "2020-05-21");
+function findAverageScore(array) {  
+    let sum = 0;
+    for (const student of array) {
+        sum += student.score;
+    }
+    let avg = sum / array.length;
+    return avg;
+}
+
+function filterPassing(array) {
+    let passingStudents = array.filter(function(student) {
+        return student.score >= 60;
+      });
+}
+
+function filter90AndAbove(array) {
+    let topStudents = array.filter(function(student) {
+        return student.score >= 90;
+      });
+}
+
+addSubmission(submissions, "James", 92, "2020-05-21");
 deleteSubmissionsByIndex(submissions, 0);
 deleteSubmissionByName(submissions, "Jill");
-editSubmission(submissions, 1, 34);
+editSubmission(submissions, 1, 74);
 findSubmissionByName(submissions, "Jack");
 findLowestScore(submissions);
-console.log(submissions);
+findAverageScore(submissions);
+filterPassing(submissions);
+filter90AndAbove(submissions);
